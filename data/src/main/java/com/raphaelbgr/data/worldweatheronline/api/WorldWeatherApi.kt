@@ -10,6 +10,7 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 
 class WorldWeatherApi {
 
@@ -40,12 +41,17 @@ class WorldWeatherApi {
     fun getWeatherInfoByCity(city: String, callback: WorldWeatherOnlineLiveData.Callback) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
-                val result =
-                    apiInstance.getWeatherInfoByCity(API_KEY, city, FORMAT, NUM_OF_DAYS)
-                        .await()
-                if (result != null) {
-                    callback.onWeatherInfoSuccess(result)
-                } else {
+                try {
+                    val result =
+                        apiInstance.getWeatherInfoByCity(API_KEY, city, FORMAT, NUM_OF_DAYS)
+                            .await()
+                    if (result != null) {
+                        callback.onWeatherInfoSuccess(result)
+                    } else {
+                        callback.onWeatherInfoFailure(city)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
                     callback.onWeatherInfoFailure(city)
                 }
             }

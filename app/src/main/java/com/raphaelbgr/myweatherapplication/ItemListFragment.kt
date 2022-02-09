@@ -42,6 +42,8 @@ class ItemListFragment : Fragment(){
     }
 
     private fun setupScreenData() {
+        (requireActivity() as ItemDetailHostActivity).changeTitle("Weather Forecast - Choose city")
+
         val recyclerView: RecyclerView = binding.itemList as RecyclerView
 
         val itemDetailFragmentContainer: View? = view?.findViewById(R.id.item_detail_nav_container)
@@ -90,6 +92,8 @@ class ItemListFragment : Fragment(){
                 }
                 lWResponseMutableLiveData.removeObserver { this }
             })
+
+            Toast.makeText(this@ItemListFragment.requireContext(), "Loading " + item.city + "...", Toast.LENGTH_SHORT).show()
 
             lWResponseMutableLiveData.getWeatherData(item.city)
         }

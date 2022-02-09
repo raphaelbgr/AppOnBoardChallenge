@@ -43,7 +43,8 @@
             android:id="@+id/rv_detail_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_holder_forecast" />
 
     </androidx.core.widget.NestedScrollView>
 
