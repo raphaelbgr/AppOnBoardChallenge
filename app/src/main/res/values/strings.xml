@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">My Weather Application</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="five_day_forecast">5-day forecast</string>
+    <string name="avg_temp">Avg temp:</string>
+    <string name="chance_of_rain">Chance of rain:</string>
+    <string name="chance_of_snow">Chance of snow:</string>
 </resources>

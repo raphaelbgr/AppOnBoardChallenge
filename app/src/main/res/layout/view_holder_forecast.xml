@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Today" />
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        android:text="@string/avg_temp" />
+
+    <TextView
+        android:id="@+id/tv_temp_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        tools:text="20 C" />
+
+    <TextView
+        android:id="@+id/tv_temp_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_temp_c"
+        app:layout_constraintEnd_toStartOf="@+id/tv_temp_c"
+        tools:text="68 F" />
+
+    <TextView
+        android:id="@+id/tv_temp_chance_of_rain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_temp_c"
+        android:text="@string/chance_of_rain" />
+
+    <TextView
+        android:id="@+id/tv_temp_chance_of_rain_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_view_holder_margin"
+        android:layout_marginBottom="@dimen/default_view_holder_margin"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_temp_chance_of_rain"
+        app:layout_constraintTop_toTopOf="@+id/tv_temp_chance_of_rain"
+        tools:text="50%" />
+
+    <TextView
+        android:id="@+id/tv_temp_chance_of_snow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_temp_chance_of_rain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/chance_of_snow" />
+
+    <TextView
+        android:id="@+id/tv_temp_chance_of_snow_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_view_holder_margin"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_temp_chance_of_snow"
+        app:layout_constraintTop_toBottomOf="@id/tv_temp_chance_of_rain"
+        tools:text="50%" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

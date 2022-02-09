@@ -31,4 +31,8 @@ class ItemDetailHostActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
+    fun changeTitle(title: String) {
+        supportActionBar?.title = title
+    }
 }
